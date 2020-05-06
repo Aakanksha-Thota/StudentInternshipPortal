@@ -4,7 +4,6 @@ from .models import Signup1
 from .models import Intern
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-import tblib
 from .forms import ApplicationForm
 
 def apphome(request):
@@ -37,22 +36,22 @@ def appl(request):
             try:
                 post.validate_unique()
             except:
-                messages.warning(request, f'Already applied for this internship')
+                messages.warning(request, 'Already applied for this internship')
                 return render(request,'web_app/apphome.html')
 
             try:
                 post.full_clean()
             except:
-                messages.warning(request, f'Phone number not valid')
+                messages.warning(request, 'Phone number not valid')
                 form =ApplicationForm() 
                 return render(request,'web_app/application.html',{'form':form})  
                   
             post.save()
-            messages.success(request, f'Applied for the internship succesfully')
+            messages.success(request, 'Applied for the internship succesfully')
             return render(request,'web_app/apphome.html') 
              
         else:
-            messages.warning(request, f'Full name does not match')
+            messages.warning(request, 'Full name does not match')
             form =ApplicationForm() 
             return render(request,'web_app/application.html',{'form':form})
     else:  
