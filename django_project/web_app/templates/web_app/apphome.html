@@ -1,0 +1,105 @@
+{% extends "web_app/base.html" %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <title>Student Internship Portal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .head{
+            width:150%;
+            background-color: white;            
+            padding: 20px;
+            text-align: center;
+            z-index:10;
+            }
+            .box{
+            width:153%;
+            position: relative;
+            display: inline-block; /* Make the width of box same as image */
+            }
+
+            .box .text{
+                position: absolute;
+                z-index: 999;
+                margin: 0 auto;
+                left: 45%;
+                right: 0;
+                top: 7%; /* Adjust this value to move the positioned div up and down */
+                text-align: center;
+                width: 60%; 
+                color: black;
+                /* Set the width of the positioned div */
+                    }
+            body{
+               background: rgb(255, 254, 254);
+               font-family: sans-serif;
+               font-size: 20px;
+               width: 100%;
+            }
+            h1,h2,h3{
+                text-align: centre;
+                padding-left: 0;
+                color: black;
+                font-family:'Lucida Sans';
+                
+            }
+            h4{
+                text-align: centre;
+                padding-left: 7%;
+                color: black;
+            }
+            .section{
+                width: 150%;
+                float: left;
+                margin: 2% 2%;
+                text-align: centre;
+                font-family: 'Verdana';
+            }
+
+</style>
+</head>
+<body>
+    <div class = head style="background-color : white">
+        <h1 style="color:blue ;font-family:verdana;"><i>Student Internship Portal</i></h1>
+    </div>
+    <div class="box">
+    <img src="{% static 'web_app/images/prog.png' %}" width=100%>
+    <div class="text">
+        
+        <h1 style="color:white; font-family:'Lucida Sans';">&nbsp;&nbsp;&nbsp;&nbsp;Imagine,Create and Inspire!!</h1>
+        <h4>Internship incorporates the experience of working in <br>the field of one’s choice at the time of<br>
+        completing ones education.<h4>
+    </div>
+     </div>
+             <div class="section">
+                <h3 >What is an Internship?</h3>
+                <p><i>An internship is on-the-job training for many professional jobs, similar to
+                    an apprenticeship, more often taken up by college and university students during his
+                    undergraduate or master degree in their free time to supplement their formal education
+                    and expose them to the world of work.</i>
+                </p>
+            </div>
+             <div class="section">
+                <div style="overflow:hidden;background-color:rgb(245, 244, 244); width:80%">
+                    <img src="{% static 'web_app/images/th.jpg' %}" alt="" style="float:right">
+                <h3 >Why you should do an internship?</h3>
+                <p><i>Because an internship aims to :<br>
+                    1)Produce students with technical skills.<br>
+                    2)Develop creative innnovatives with the confidence and courage.<br>
+                    3)Enrich their educational experience and work experience.</p></i>
+                </div>
+            </div>
+              
+             <div class="section">
+                <h3 >What are the types of internship?</h3>
+                <p><i><u> 1)Paid internship:</u> There are definite fields of employment that are more likely to have remunerated internships.<br>
+                    <u>2)Unpaid internship:</u> These internship is done voluntarily or to just gain work experience.<br>
+                    <u>3)Internship for credits:</u> On the basis of internship programmed report student get credit for its semester.<br>
+                   <u> 4)Summer internships:</u> These are conducted during thier summer break.</p></i>
+            </div>
+</body>
+</html>
+
+{% endblock content %}

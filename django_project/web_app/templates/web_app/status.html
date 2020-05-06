@@ -1,0 +1,16 @@
+{% extends "web_app/base.html" %}
+
+{% block content %}
+
+{% for post in context %}
+        <div class="main-section">    	
+        <h1 style="color: blue;font-style: italic;font-family:'Genava';">{{ post.internship.comp_name }}</h1>
+        <h3>{{ post.internship.job}}</h3>
+        {{post.status}}
+   </div>
+
+{% empty %}
+<h1>No internships yet</h1>
+{% endfor %}
+{% endblock content %}
+

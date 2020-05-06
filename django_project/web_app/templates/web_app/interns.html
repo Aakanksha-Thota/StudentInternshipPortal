@@ -1,0 +1,58 @@
+{% extends "web_app/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<style>
+    h1{ 
+        font-family: 'Times New Roman';
+        color: rgb(14, 145, 221);
+    }
+    .table1{
+       width: 100%;
+    }
+  
+</style>
+<body>            
+                    <h3 align="center" style="font-style: italic;font-family: Verdana;width:153% ">Internships Available</h3>
+                    <br>
+                    {% for post in context %}
+                    <div class="content-section">
+                    <h1>{{ post.job }}<h1>
+                    <h2 style="font-family:'Times New Roman'">{{ post.comp_name}}</h2>
+                    <h5>Location:   {{post.location}}</h5>
+                    <table class="table1" cellpadding="2px" >
+                    <tr>
+                        <td>Duration</td>
+                        <td>Stipend</td>
+                        <td>Start Date</td>
+                        <td>Apply By</td>
+                    </tr>
+                    <tr>
+                        <td>{{post.desc}}</td>
+                        <td>{% if post.stip  %}
+                            Rs.{{post.stip}}/month
+                            {% else %}
+                            No stipend
+                            {% endif %}</td>
+                        <td>                        
+                            {% if post.is_past_due %}
+                            {{post.sdate}} 
+                            {% else %}
+                            Immediately
+                            {% endif %}
+                        </td>
+                        <td>{{post.applyby}}</td>
+                    </tr>
+                    </table><br>
+                    <div class="section"><table width="100%" ><td><h6>Internship Id:   {{post.id}}<br>*Remember this Id and enter while applying</h6></td>
+                        <td><a class="nav-item nav-link" href="{% url 'appl' %}">>>>Apply Now</a></td>
+                        </table></div>
+                </div>
+                
+                    {% endfor %}
+                    </table>
+
+</body>
+</html>
+{% endblock content %}
