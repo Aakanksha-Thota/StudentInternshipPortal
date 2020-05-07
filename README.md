@@ -14,12 +14,11 @@ Using Django Framework
 * [License](#license)
 
 # Student-Internship-Portal
-This Project is used by the students for registering themselves for the internships available on the Student-Internship-Portal. It includes three types of  users :
+This Project is used by the students for registering themselves for the internships available on the Student-Internship-Portal. It includes two types of  users :
 1.Student
 2.Coordinator
-3.Head of the Dept.
 
-Student can log onto the website and register for the available internships on the portal. Based on the applications received the coordinator selects the students. The reports(selected students) will be generated and will be displayed in the head of the Dept. account. The students can view their status in the portal regarding their application. 
+Student can log onto the website and register for the available internships on the portal. Based on the applications received the coordinator selects the students.The students can view their status in the portal regarding their application. 
 
 # Getting Started
 
