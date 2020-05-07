@@ -51,7 +51,7 @@ def appl(request):
             return render(request,'web_app/apphome.html') 
              
         else:
-            messages.warning(request, 'Full name does not match')
+            messages.warning(request, 'Full name does not match, Check your Profile')
             form =ApplicationForm() 
             return render(request,'web_app/application.html',{'form':form})
     else:  
